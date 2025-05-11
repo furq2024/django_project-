@@ -1,12 +1,39 @@
 {% extends "FeedApp/base.html" %}
+{% load static %}
 
-{% block page_header %}
-    <div class="jumbotron">
-       <h1 class="display-3">Feed</h1>
-            <p class="lead">A Social Network where you can be you.
-            </p>
+{% block content %}
 
-            <a class="btn btn-lg btn-outline-primary" href="{% url 'users:register' %}"
-            role="button">Join Now &raquo;</a>
-    </div>
-{% endblock page_header %}
+<style>
+  .hero {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+  }
+
+  .hero img {
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    color: #555;
+  }
+</style>
+
+<div class="hero">
+  <img src="{% static 'images/banner2.jpg.jpg' %}" alt="Banner">
+  <h1>Django World</h1>
+  <p>A social network where you can be Django</p>
+  <a class="btn btn-lg btn-outline-primary" href="{% url 'users:register' %}">Join Now &raquo;</a>
+</div>
+{% endblock content %}
+
